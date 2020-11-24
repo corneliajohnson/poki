@@ -36,10 +36,45 @@ ORDER BY a.Name ASC
 
 
 -- 6. Starting with the above query, add the recorded gender of each of the authors.
+/*
+SELECT TOP 76 a.Name, g.Name, gen.Name
+FROM Grade g
+LEFT JOIN Author a ON  a.GradeId = g.Id
+LEFT JOIN Gender gen ON a.GenderId = gen.Id
+ORDER BY a.Name ASC
+*/
+
 -- 7. What is the total number of words in all poems in the database?
+/*
+SELECT COUNT(WordCount)
+FROM Poem
+*/
+
+
 -- 8. Which poem has the fewest characters?
+/*
+SELECT Title, CharCount
+FROM Poem
+WHERE CharCount = (SELECT MIN(CharCount) FROM Poem)
+*/
+
+
 -- 9. How many authors are in the third grade?
+/*
+SELECT COUNT(Name)
+From Author
+WHERE GradeId = 3
+*/
+
+
 -- 10. How many authors are in the first, second or third grades?
+/*
+SELECT COUNT(Name)
+From Author
+WHERE GradeId = 3 OR GradeId = 2 OR GradeId = 1
+*/
+
+
 -- 11. What is the total number of poems written by fourth graders?
 -- 12. How many poems are there per grade?
 -- 13. How many authors are in each grade? (Order your results by grade starting with 1st Grade)
