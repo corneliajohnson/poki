@@ -18,7 +18,6 @@
 ## PoKi ERD
 
 ![poki erd](![image](https://user-images.githubusercontent.com/38992646/100142571-1c377000-2e62-11eb-903c-d1583826b80a.png)
-)
 
 ## Investigating the Data
 
