@@ -85,14 +85,22 @@ WHERE GradeId = 4
 
 
 -- 12. How many poems are there per grade?
+SELECT g.Name, COUNT(g.Name) as PoemsPerGrade
+FROM Grade g, Poem p, Author a
+WHERE a.GradeId = g.Id AND p.AuthorId = a.GradeId
+GROUP BY(g.Name)
 
+
+
+-- 13. How many authors are in each grade? (Order your results by grade starting with 1st Grade)
+/*
 SELECT g.Name, COUNT(g.Name)
 FROM Grade g
 LEFT JOIN Author a ON a.GradeId = g.Id
 GROUP BY(g.Name)
+*/
 
 
--- 13. How many authors are in each grade? (Order your results by grade starting with 1st Grade)
 -- 14. What is the title of the poem that has the most words?
 -- 15. Which author(s) have the most poems? (Remember authors can have the same name.)
 -- 16. How many poems have an emotion of sadness?
