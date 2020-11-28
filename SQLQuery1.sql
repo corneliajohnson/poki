@@ -111,6 +111,11 @@ WHERE WordCount = (SELECT MAX(WordCount) FROM Poem)
 
 
 -- 15. Which author(s) have the most poems? (Remember authors can have the same name.)
+SELECT Name, COUNT(Title)
+FROM Author, Poem
+GROUP BY Name
+ORDER BY COUNT(Title) DESC
+
 -- 16. How many poems have an emotion of sadness?
 -- 17. How many poems are not associated with any emotion?
 -- 18. Which emotion is associated with the least number of poems?
