@@ -76,6 +76,13 @@ WHERE GradeId = 3 OR GradeId = 2 OR GradeId = 1
 
 
 -- 11. What is the total number of poems written by fourth graders?
+
+SELECT COUNT(Title)
+FROM Poem
+LEFT JOIN Author a ON AuthorId = a.Id
+WHERE GradeId = 4
+
+
 -- 12. How many poems are there per grade?
 -- 13. How many authors are in each grade? (Order your results by grade starting with 1st Grade)
 -- 14. What is the title of the poem that has the most words?
